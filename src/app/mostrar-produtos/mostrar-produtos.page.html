@@ -1,0 +1,36 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" (click)="Pedidos()">
+      <ion-button>
+        <ion-icon  name="arrow-back"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Produtos do Pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of lista">
+       
+       
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-img src="{{url_site_img}}{{item.imagem}}"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        
+        {{item.nome}} 
+        <h6><span>R$ {{item.valor}}</span>  - QTD {{item.quantidade}}</h6>
+  
+      </ion-label>
+      
+   
+    </ion-item>
+  
+    
+  </ion-item-sliding>
+  </ion-list>
+  
+  
+  </ion-content>

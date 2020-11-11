@@ -1,0 +1,115 @@
+<ion-header >
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" (click)="Carrinho()">
+      <ion-button>
+        <ion-icon  name="arrow-back"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Finalizar Pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+<ion-item >
+  <ion-label>Tipo Pagamento</ion-label>
+  <ion-select placeholder="Selecione" [(ngModel)]="tipo" >
+    <ion-select-option  value="Dinheiro">Dinheiro</ion-select-option>
+    <ion-select-option  value="Cartão de Débito">Cartão de Débito</ion-select-option>
+    <ion-select-option  value="Cartão de Crédito">Cartão de Crédito</ion-select-option>   
+  </ion-select>
+</ion-item>
+
+<ion-item *ngIf="tipo === 'Dinheiro'">
+  <ion-label position="floating">
+    Total para o Troco
+  </ion-label>
+  <ion-input [(ngModel)]="troco"></ion-input>
+
+ 
+</ion-item>
+
+
+<ion-row>
+  <ion-col size="9">
+    <ion-item>
+      <ion-label position="floating">
+        Rua
+      </ion-label>
+      <ion-input [(ngModel)]="rua"></ion-input>
+  
+     
+    </ion-item>
+  </ion-col>
+
+  <ion-col size="3">
+    <ion-item>
+      <ion-label position="floating">
+        Número
+      </ion-label>
+      <ion-input [(ngModel)]="numero"></ion-input>
+  
+      
+    </ion-item>
+  </ion-col>
+</ion-row>
+
+
+  
+
+  <ion-item >
+    <ion-label>Bairro</ion-label>
+    <ion-select placeholder="Selecione" [(ngModel)]="bairro" >
+      <ion-select-option *ngFor="let item of lista" value="{{item.nome}}">{{item.nome}}</ion-select-option>
+          
+    </ion-select>
+  </ion-item>
+
+
+
+  <ion-item>
+    <ion-label position="floating">Tirar o Picles / etc</ion-label>
+    <ion-textarea [(ngModel)]="obs"></ion-textarea>
+  </ion-item>
+ 
+
+  <ion-button color="primary" expand="block" fill="outline" (click)="finalizar()">
+    Salvar
+  </ion-button>
+
+ 
+
+</ion-content>
+
+
+
+<ion-footer>
+ 
+
+  <ion-grid>
+   
+      <ion-row>
+        <ion-col >
+         
+          <h6><ion-icon color="primary" name="bicycle"></ion-icon>
+            Entrega: {{previsao}} Minutos</h6>
+         
+        </ion-col>
+  
+        <ion-col>
+        
+         
+          <h6><ion-icon color="success" name="card"></ion-icon>
+            Sub-Total: R$ {{subtotal2}}</h6>
+        
+        
+        </ion-col>
+  
+        </ion-row>
+
+    
+      
+      </ion-grid>
+
+
+</ion-footer>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cartão Fidelidade</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<h4>Cartão Fidelidade</h4>
+<span>A cada 5 compras no site você ganha uma bebida!!</span><br>
+
+<ion-row class="linha">
+
+  
+  <ion-col size="2">
+    <ion-img src="{{url_site_img}}carimbado.png" *ngIf="cartao > 0"></ion-img>
+    <ion-img src="{{url_site_img}}nao-carimbado.png" *ngIf="cartao <= 0"></ion-img>
+  </ion-col>
+
+  <ion-col size="2">
+    <ion-img src="{{url_site_img}}carimbado.png" *ngIf="cartao > 1"></ion-img>
+    <ion-img src="{{url_site_img}}nao-carimbado.png" *ngIf="cartao <= 1"></ion-img>
+  </ion-col>
+
+  <ion-col size="2">
+    <ion-img src="{{url_site_img}}carimbado.png" *ngIf="cartao > 2"></ion-img>
+    <ion-img src="{{url_site_img}}nao-carimbado.png" *ngIf="cartao <= 2"></ion-img>
+  </ion-col>
+
+  <ion-col size="2">
+    <ion-img src="{{url_site_img}}carimbado.png" *ngIf="cartao > 3"></ion-img>
+    <ion-img src="{{url_site_img}}nao-carimbado.png" *ngIf="cartao <= 3"></ion-img>
+  </ion-col>
+
+  <ion-col size="2">
+    <ion-img src="{{url_site_img}}carimbado.png" *ngIf="cartao > 4"></ion-img>
+    <ion-img src="{{url_site_img}}nao-carimbado.png" *ngIf="cartao <= 4"></ion-img>
+  </ion-col>
+  
+</ion-row> 
+
+<div *ngIf="mensagem === '1'">Você não está Logado! Faça seu Login</div>
+
+</ion-content>

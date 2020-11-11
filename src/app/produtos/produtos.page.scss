@@ -1,0 +1,62 @@
+.titulo-home {
+    font-size: 13px;
+}
+
+.welcome-card ion-img {
+    max-height: 35vh;
+    overflow: hidden;
+}
+
+.titulo-produto {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.preco-produto {
+    font-size: 13px;
+    font-weight: 200;
+}
+
+.margin-l {
+    margin-left: 10px;
+}
+
+.rodape-carrinho {
+    color: red($color: #940c0c);
+    text-align: center;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.titulo-slider {
+    margin-left: 15px;
+    font-size: 13px;
+}
+
+.subtitulo-slider {
+    font-size: 11px;
+    margin-left: 15px;
+}
+
+.item-slide {
+    width: 25px;
+    background-color: #f5f5f5;
+    margin-top: 5px;
+}
+
+.cinzaclaro {
+    background-color: #fcfcfc;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+}
+.toolbar-container {
+    padding-left: unset;
+    padding-right: unset;
+    padding-inline-start: var(--padding-start);
+    padding-inline-end: var(--padding-end);
+    background-color: #ffff00!important;
+}
+ion-toolbar.in-toolbar.md.ion-color.ion-color-yellow.hydrated {
+    background:#FED80B;
+}

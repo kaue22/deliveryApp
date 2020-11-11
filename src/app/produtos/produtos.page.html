@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar color="yellow">
+    JAZZ BURGUER
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end">
+      <ion-button  (click)="logout()">
+        <ion-icon slot="end" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+
+
+  <ion-row>
+
+    
+      <ion-slides>
+       
+        <ion-slide class="item-slide" *ngFor="let item of lista_cat" (click)="filtrarCategoria(item.id)">
+          <ion-thumbnail slot="start">
+            <ion-img src="{{url_site_img_cat}}{{item.imagem}}"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+      
+            <h5 class="titulo-slider">{{item.nome}}</h5>
+            <h6><span class="subtitulo-slider">{{total_itens_cat}} Produtos</span></h6>
+              
+      
+          </ion-label>
+        </ion-slide>
+       
+        
+        
+      </ion-slides>
+   
+
+  </ion-row>
+
+
+  <ion-row class="cinzaclaro">
+  
+    <ion-input placeholder="Buscar Produto" [(ngModel)]="buscar" type="search" (ionChange)="listarProdutos()" ></ion-input>
+  
+    <ion-buttons (click)="listarProdutos()">
+      <ion-button>
+        <ion-icon slot="end" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  
+  </ion-row>
+
+
+
+  <ion-row class="margin-l">
+
+    <ion-card class="card" style="width: 43%" *ngFor="let item of lista">
+      <ion-img class="img-login center" src="{{url_site_img}}{{item.imagem}}"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>R$ {{item.valor}}</ion-card-subtitle>
+        <ion-card-title class="titulo-produto">{{item.nome}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button (click)="addCarrinho(item.id)" expand="block" color="success" ><ion-icon name="cart"></ion-icon>ADD</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+   
+  </ion-row>
+
+
+
+  
+  <ion-infinite-scroll  (ionInfinite)="loadData($event)" *ngIf="total_itens >= limit">
+  <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Carregando mais dados">
+  </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  
+
+</ion-content>
+
+
+<ion-footer>
+ 
+
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+          <ion-tab-button (click)="categorias()">
+            <ion-icon color="primary" name="list-circle"></ion-icon>
+            <ion-label>Categorias</ion-label>
+          </ion-tab-button>
+        </ion-col>
+
+        <ion-col (click)="carrinhoPage()" *ngIf="total_carrinho != undefined">
+          <div class="rodape-carrinho center">
+          <ion-icon color="danger" name="cart"></ion-icon>
+          Carrinho: R$ {{total_carrinho}}
+        </div>
+        </ion-col>
+
+        <ion-col *ngIf="total_carrinho === undefined">
+          <div class="rodape-carrinho center">
+          <ion-icon color="danger" name="cart"></ion-icon>
+          Carrinho: Sem produtos
+        </div>
+        </ion-col>
+
+        </ion-row>
+        
+        </ion-grid>
+      
+    
+      
+
+</ion-footer>
+
