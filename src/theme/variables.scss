@@ -8,10 +8,10 @@
   body {
     $colors: (
       colorItem: #000000,
-      newColor: #ffffff,
+      newColor: #ffff00,
     );
 
-    --ion-color-primary: #ffffff;
+    --ion-color-primary: #ffff00;
     --ion-color-primary-rgb: 56, 128, 255;
     --ion-color-primary-contrast: #ffffff;
     --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -104,8 +104,8 @@
 
       
        
-      --newColor: #ffffff;
-      --ion-color-initial:#ffffff;
+      --newColor: #ffff00;
+      --ion-color-initial:#ffff00;
       --ion-color-primary: #ffff00;
       --ion-color-primary-rgb: 66, 140, 255;
       --ion-color-primary-contrast: #ffffff;
@@ -205,7 +205,7 @@
       --ion-color-step-900: #e6e6e6;
       --ion-color-step-950: #f2f2f2;
 
-      --ion-toolbar-background: #0d0d0d;
+      --ion-toolbar-background: #e5e619;
 
       --ion-item-background: #000000;
     }
@@ -246,7 +246,7 @@
 
       --ion-item-background: #1e1e1e;
 
-      --ion-toolbar-background: #1f1f1f;
+      --ion-toolbar-background: #e5e619;
 
       --ion-tab-bar-background: #1f1f1f;
     }
