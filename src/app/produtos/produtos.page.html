@@ -1,66 +1,8 @@
-<ion-app>
-  <ion-header translucent>
-    <ion-toolbar>
-      <ion-title>JAZZ BURGUER</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
-
-
-    <ion-row>
-
-
-      <ion-slides>
-
-      
-dsfsdfsdfsdfds
-
-
-      </ion-slides>
-
-
-    </ion-row>
-
-
-  
-
-
-
-    <ion-row class="margin-l">
-
-      <ion-card class="card" style="width: 43%" *ngFor="let item of lista">
-        <ion-img class="img-login center" src="{{url_site_img}}{{item.imagem}}"></ion-img>
-        <ion-card-header>
-          <ion-card-subtitle>R$ {{item.valor}}</ion-card-subtitle>
-          <ion-card-title class="titulo-produto">{{item.nome}}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-button (click)="addCarrinho(item.id)" expand="block" color="success">
-            <ion-icon name="cart"></ion-icon>ADD
-          </ion-button>
-        </ion-card-content>
-      </ion-card>
-
-
-    </ion-row>
-
-
-
-
-    <ion-infinite-scroll (ionInfinite)="loadData($event)" *ngIf="total_itens >= limit">
-      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Carregando mais dados">
-      </ion-infinite-scroll-content>
-    </ion-infinite-scroll>
-
-
-  </ion-content>
-</ion-app>
-<!--  <ion-header>
-  <ion-toolbar color="newColor">
+<ion-header>
+  <ion-toolbar color="yellow">
     JAZZ BURGUER
     <ion-buttons slot="start">
-      <ion-menu-button color="newColor"></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
     
     <ion-buttons slot="end">
@@ -79,7 +21,7 @@ dsfsdfsdfsdfds
   <ion-row>
 
     
-  <ion-slides>
+      <ion-slides>
        
         <ion-slide class="item-slide" *ngFor="let item of lista_cat" (click)="filtrarCategoria(item.id)">
           <ion-thumbnail slot="start">
@@ -181,4 +123,3 @@ dsfsdfsdfsdfds
 
 </ion-footer>
 
--->
